@@ -1,4 +1,4 @@
-{{ if .Values.compact.enabled }}
+{{ if and .Values.compact.enabled (eq "Deployment" .Values.compact.kind) }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:

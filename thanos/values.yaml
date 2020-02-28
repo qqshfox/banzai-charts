@@ -346,6 +346,10 @@ query:
 
 compact:
   enabled: true
+  # Deployment or CronJob
+  kind: Deployment
+  # Schedule of CronJob
+  schedule: "0 * * * *"
   # Minimum age of fresh (non-compacted) blocks before they are being processed.
   # Malformed blocks older than the maximum of consistency-delay and 30m0s will be removed.
   consistencyDelay: 30m
@@ -409,6 +413,14 @@ compact:
   #
   # Add extra annotations to compact deployment
   deploymentAnnotations: {}
+  #  extraAnnotation: extraAnnotationValue
+  #
+  # Add extra labels to compact cronjob
+  cronjobLabels: {}
+  #  extraLabel: extraLabelValue
+  #
+  # Add extra annotations to compact cronjob
+  cronjobAnnotations: {}
   #  extraAnnotation: extraAnnotationValue
   #
   # Enable metrics collecting for compat service

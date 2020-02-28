@@ -279,6 +279,8 @@ timePartioning:
 |Name|Description| Default Value|
 |----|-----------|--------------|
 | compact.enabled | Enable component | true |
+| compact.kind | Deployment or CronJob | Deployment |
+| compact.schedule | Schedule of CronJob | 0 * * * * |
 | compact.replicaCount | Pod replica count | 1 |
 | compact.logLevel | Log level | info |
 | compact.logFormat | Log format to use. Possible options: logfmt or json. | logfmt |
@@ -289,6 +291,8 @@ timePartioning:
 | compact.retentionResolution1h | How long to retain samples of resolution 2 (1 hour) in bucket. 0d - disables this retention | 1y |
 | compact.blockSyncConcurrency | Number of goroutines to use when syncing block metadata from object storage. | 20 |
 | compact.compactConcurrency | Number of goroutines to use when compacting groups. | 1 |
+| compact.cronjobLabels | Additional labels to the cronjob | {} |
+| compact.cronjobAnnotations | Additional annotations to the cronjob | {} |
 | compact.dataVolume.backend | Data volume for the compactor to store temporary data defaults to emptyDir. | {} |
 | compact.persistentVolumeClaim | Create the specified persistentVolumeClaim in case persistentVolumeClaim is used for the dataVolume.backend above and needs to be created. | {} |
 
